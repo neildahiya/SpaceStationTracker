@@ -1,12 +1,47 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Space Station Tracker</title>
+    <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 600px; /* The height is 400 pixels */
+        width: 100%; /* The width is the width of the web page */
+      }
+    </style>
   </head>
   <body>
-    <div class="position">
-      Current Location of the International Space Station : <br />
-      Latitiude : <%= data.iss_position.latitude %> <br />
-      Longitude : <%= data.iss_position.longitude %>
-    </div>
+    <h3>
+      <div class="position">
+        Current Location of the International Space Station : <br />
+        Latitiude : <span id="lat"><%= data.iss_position.latitude %></span>
+        <br />
+        Longitude : <span id="lon"><%= data.iss_position.longitude %></span>
+      </div>
+    </h3>
+
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+      var lat = parseInt(document.getElementById("lat").textContent);
+      var lon = parseInt(document.getElementById("lon").textContent);
+
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        var uluru = { lat: lat, lng: lon };
+        // The map, centered at Uluru
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru
+        });
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({ position: uluru, map: map });
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiLao84kqZ2yU9ZFWmb4fyQ9qAOhmsxOU&callback=initMap"
+    ></script>
   </body>
 </html>
