@@ -1,0 +1,28 @@
+{
+  "name": "spacestationtracker-master",
+  "version": "1.0.0",
+  "description": "Space Station Tracker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neildahiya/SpaceStationTracker.git"
+  },
+  "author": "neil dahiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neildahiya/SpaceStationTracker/issues"
+  },
+  "homepage": "https://github.com/neildahiya/SpaceStationTracker#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "got": "^10.1.0",
+    "nodemon": "^2.0.2",
+    "request": "^2.88.0"
+  }
+}
